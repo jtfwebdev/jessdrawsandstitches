@@ -1,0 +1,22 @@
+.masonry_container {
+    columns: 4;
+    column-gap: 20px;
+    column-rule: solid 1px #4d243d2c;
+}
+
+.masonry_box {
+    width: 100%;
+    margin-bottom: 10px;
+    break-inside: avoid;
+}
+
+.masonry_box img {
+    max-width: 100%;
+    border-radius: 5px;
+    transition-duration: .3s;
+}
+
+.masonry_box img:hover {
+    scale: 1.5;
+    z-index: 99;
+}
