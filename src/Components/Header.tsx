@@ -36,11 +36,11 @@ const Header = () => {
     }
 
     return ( 
-        <div className="w-full flex justify-end h-16 bg-rose-100 fixed bg-opacity-95 backdrop-blur-lg top-0 left-0">
+        <div className="w-full flex justify-end h-16 bg-transparent fixed top-0 left-0">
             <div className="hamburger" onClick={() => setMenuOpen((prev) => !prev)}>
-                <motion.div className="bar bg-champagne-100" variants={burgerMenuVariants} initial="initial1" animate={menuOpen ? "open1" : "initial1"}></motion.div>
-                <motion.div className="bar bg-champagne-100" variants={burgerMenuVariants} initial="initial2" animate={menuOpen ? "open2" : "initial2"}></motion.div>
-                <motion.div className="bar bg-champagne-100" variants={burgerMenuVariants} initial="initial3" animate={menuOpen ? "open3" : "initial3"}></motion.div>
+                <motion.div className="bar bg-rose-100" variants={burgerMenuVariants} initial="initial1" animate={menuOpen ? "open1" : "initial1"}></motion.div>
+                <motion.div className="bar bg-rose-100" variants={burgerMenuVariants} initial="initial2" animate={menuOpen ? "open2" : "initial2"}></motion.div>
+                <motion.div className="bar bg-rose-100" variants={burgerMenuVariants} initial="initial3" animate={menuOpen ? "open3" : "initial3"}></motion.div>
             </div>
         </div>
      );

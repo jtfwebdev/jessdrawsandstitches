@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        dancing: ["Dancing Script", "cursive"]
+      },
       colors: {
         almond: {
           100: '#ECDCC9'
@@ -23,7 +26,7 @@ export default {
           100: '#F5DDDD'
         },
         rose: {
-          100: '#DA627D'
+          100: '#FFC689'
         }
       }
     },
