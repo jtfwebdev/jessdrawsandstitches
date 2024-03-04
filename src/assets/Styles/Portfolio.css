@@ -16,7 +16,11 @@
     transition-duration: .3s;
 }
 
-.masonry_box img:hover {
-    scale: 1.5;
-    z-index: 99;
+.masonry_container:hover .masonry_box img {
+    filter: grayscale(100%);
+}
+
+.masonry_container .masonry_box:hover img {
+    filter: none;
+    transform: scale(1.05);
 }
