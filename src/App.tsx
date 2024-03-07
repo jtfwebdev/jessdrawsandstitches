@@ -14,11 +14,9 @@ function App() {
   const [itemView, setItemView] = useState(null);
 
   const [posts, setPosts] = useState(null);
-  const [fetching, setFetching] = useState(true);
-  const [tags, setTags] = useState(null);
 
   useEffect(() => {
-    FetchPosts(setPosts, setTags, setFetching);
+    FetchPosts(setPosts);
   }, [])
 
   return (
