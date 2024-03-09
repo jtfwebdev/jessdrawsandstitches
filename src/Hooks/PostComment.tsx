@@ -1,6 +1,12 @@
 import axios from 'axios';
 
-const PostComment = (message, id) => {
+const PostComment = (message, id, setMessage, setPlaceholderMessage) => {
+
+    const messageTimeout = () => {
+        setTimeout(() => {
+            setPlaceholderMessage("Write a message...")
+        }, 3000)
+    }
     
     const data = {
         post: id,
@@ -9,10 +15,14 @@ const PostComment = (message, id) => {
 
     axios.post(`https://api.jessdrawsandstitches.co.uk/wp-json/wp/v2/comments`, data)
     .then((res) => {
-        console.log(res)
+        setMessage("");
+        setPlaceholderMessage("Thank you!");
+        messageTimeout();
     })
     .catch((error) => {
-        console.log(error)
+        setMessage("");
+        setPlaceholderMessage("Sorry, please try again later.")
+        messageTimeout();
     })
 }
 

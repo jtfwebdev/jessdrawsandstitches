@@ -14,10 +14,19 @@ function App() {
   const [itemView, setItemView] = useState(null);
 
   const [posts, setPosts] = useState(null);
+  const [fetching, setFetching] = useState(true);
 
   useEffect(() => {
-    FetchPosts(setPosts);
+    FetchPosts(setPosts, setFetching);
   }, [])
+
+  useEffect(() => {
+    if (itemView) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "scroll";
+    }
+  }, [itemView])
 
   return (
     <>
@@ -25,9 +34,14 @@ function App() {
     <AnimatePresence>
       {itemView && <FullView itemView={itemView} setItemView={setItemView} />}
     </AnimatePresence>
-    <div className="w-full bg-champagne-100 pt-16 pb-8 px-[10%]">
+    <div 
+    className="
+      w-full bg-champagne-100 pt-16 pb-8 px-[10%]
+      max-[700px]:px-[6%]
+      max-[550px]:px-[1%]
+      ">
       <Hero heroRef={heroRef} portfolioRef={portfolioRef} />
-      <Portfolio posts={posts} setItemView={setItemView} portfolioRef={portfolioRef} />
+      <Portfolio posts={posts} fetching={fetching} setItemView={setItemView} portfolioRef={portfolioRef} />
     </div>
     </>
   )

@@ -71,7 +71,13 @@ const Hero = ({heroRef, portfolioRef}) => {
                 </g>
                 </motion.svg>
             </div>
-            <div ref={subTitleRef} className="w-full bg-champagne-100 text-2xl text-[#C95D63] font-dancing flex align-center gap-16 pb-4 justify-center">
+            <div ref={subTitleRef} 
+            className="
+                w-full bg-champagne-100 text-2xl text-[#C95D63] font-dancing flex align-center gap-16 pb-4 justify-center
+                max-[850px]:m-auto max-[850px]:text-lg
+                max-[680px]:gap-8
+                max-[550px]:text-base
+                ">
                 <p>Embroidery</p>
                 <span>|</span>
                 <p>Artwork</p>

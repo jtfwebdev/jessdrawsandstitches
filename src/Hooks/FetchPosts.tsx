@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const FetchPosts = (setPosts) => {
+const FetchPosts = (setPosts, setFetching) => {
 
     axios.get(import.meta.env.VITE_WP_POSTS_URL)
     .then((res) => {
@@ -36,6 +36,7 @@ const FetchPosts = (setPosts) => {
             }]
         })
         setPosts(imgs);
+        setFetching(false);
     })
     .catch((err) => console.log(err))
 }

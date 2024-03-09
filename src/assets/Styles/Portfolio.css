@@ -4,6 +4,12 @@
     column-rule: solid 1px #4d243d2c;
 }
 
+@media(max-width: 750px) {
+    .masonry_container {
+        columns: 3
+    }
+}
+
 .masonry_box {
     width: 100%;
     margin-bottom: 10px;
