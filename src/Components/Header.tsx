@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import '../assets/Styles/Header.css';
 
-const Header = () => {
-
-    const [menuOpen, setMenuOpen] = useState(false);
+const Header = ({menuOpen, setMenuOpen}) => {
 
     const burgerMenuVariants = {
         initial1: {
@@ -36,7 +33,7 @@ const Header = () => {
     }
 
     return ( 
-        <div className="w-full flex justify-end h-16 bg-transparent fixed top-0 left-0">
+        <div className="w-full flex justify-end h-16 bg-transparent fixed top-0 left-0 z-[70]">
             <div className="hamburger" onClick={() => setMenuOpen((prev) => !prev)}>
                 <motion.div className="bar bg-rose-100" variants={burgerMenuVariants} initial="initial1" animate={menuOpen ? "open1" : "initial1"}></motion.div>
                 <motion.div className="bar bg-rose-100" variants={burgerMenuVariants} initial="initial2" animate={menuOpen ? "open2" : "initial2"}></motion.div>

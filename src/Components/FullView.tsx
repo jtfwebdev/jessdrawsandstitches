@@ -67,23 +67,6 @@ const FullView = ({setItemView, itemView}) => {
                         </div>
                         <AddMessage itemView={itemView} />
                     </div>
-                    {/* <div className="w-full flex flex-col flex-1 justify-between align-start">
-                        <div className="flex flex-col flex-1">
-                            <h3 className="text-[#C95D63] font-dancing text-4xl mb-4">Comments</h3>
-                            {!itemView.comments[0] && 
-                                <p className="bg-champagne-100 w-fit px-2 mb-4 rounded text-[#C95D63]">No comments yet...</p>
-                            }
-                            {itemView.comments[0] && <div 
-                            className="
-                            flex flex-col overflow-y-scroll comments_box
-                            ">
-                                {itemView.comments.map((comment) => {
-                                    return  <Comment comment={comment.comment} />
-                                })} 
-                            </div>}
-                        </div>
-                        <AddMessage itemView={itemView} />
-                    </div> */}
                 </div>
             </motion.div>
         </motion.div>

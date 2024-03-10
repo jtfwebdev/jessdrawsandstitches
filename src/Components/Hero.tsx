@@ -1,9 +1,12 @@
 import { motion, useAnimate } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useContext } from 'react';
+import { ScreenWidthContext } from '../App';
 
 const Hero = ({heroRef, portfolioRef}) => {
 
-    const [heroMinimised, setHeroMinimised] = useState(false);
+    const screenWidth = useContext(ScreenWidthContext);
+
+    const [heroMinimised, setHeroMinimised] = useState(false);                   
 
     const handleScroll = () => {
         const hero = heroRef.current?.getBoundingClientRect();
@@ -24,11 +27,16 @@ const Hero = ({heroRef, portfolioRef}) => {
 
     useEffect(() => {
         if (heroMinimised) {
-            animateSvg(svgScope.current, {scale: .6, y: -40}, {duration: .6});
-            animateSubTitle(subTitleRef.current, {y: -60}, {duration: .6});
+            animateSvg(svgScope.current, {
+                scale: .6, 
+                y: screenWidth > 1200 ? -40 : screenWidth > 1050 ? -30 : screenWidth > 800 ? -25 : -20
+            }, {duration: .6});
+            animateSubTitle(subTitleRef.current, {
+                y: screenWidth > 1050 ? -60 : screenWidth > 620 ? -40 : -30
+            }, {duration: .3});
         } else {
             animateSvg(svgScope.current, {scale: 1, y: 0}, {duration: .6});
-            animateSubTitle(subTitleRef.current, {y: 0}, {duration: .6});
+            animateSubTitle(subTitleRef.current, {y: 0}, {duration: .3});
         }
 
     }, [heroMinimised])
@@ -75,14 +83,13 @@ const Hero = ({heroRef, portfolioRef}) => {
             className="
                 w-full bg-champagne-100 text-2xl text-[#C95D63] font-dancing flex align-center gap-16 pb-4 justify-center
                 max-[850px]:m-auto max-[850px]:text-lg
-                max-[680px]:gap-8
-                max-[550px]:text-base
+                max-[680px]:gap-5 max-[680px]:text-sm bg-transparent
                 ">
-                <p>Embroidery</p>
+                <p className="g-champagne-100">Embroidery</p>
                 <span>|</span>
-                <p>Artwork</p>
+                <p className="g-champagne-100">Artwork</p>
                 <span>|</span>
-                <p>Greetings cards</p>
+                <p className="g-champagne-100">Greetings cards</p>
             </div>
         </div>
      );

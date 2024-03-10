@@ -19,6 +19,11 @@ body {
   box-sizing: border-box;
 }
 
+p, h1, h2, h3, img {
+  pointer-events: none;
+  user-select: none;
+}
+
 ::-webkit-scrollbar {
   width: 0;
 }
@@ -49,7 +54,6 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8%;
-  margin-right: 10px;
 }
 
 .fullView_close .bar {
@@ -64,5 +68,5 @@ body {
 }
 
 .fullView_close .bar:last-of-type {
-  transform: rotate(-45deg) translate(18%, -10%);
+  transform: rotate(-45deg) translate(16%, -10%);
 }
