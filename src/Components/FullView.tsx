@@ -33,8 +33,8 @@ const FullView = ({setItemView, itemView}) => {
     const containerPortrait = "fixed z-50 h-[90%] w-fit m-auto inset-x-0 inset-y-0 p-4 bg-white rounded";
     const wrapLandscape = "h-full w-full flex max-[800px]:flex-col";
     const wrapPortrait = "h-full w-full flex flex-col";
-    const imgLandscape = "h-full max-h-[65vh] mr-4 max-[800px]:mr-0 max-[800px]:max-h-[55vh]";
-    const imgPortrait = "w-full max-w-[35vw] mb-2 max-[1200px]:max-w-[40vw] max-[1050px]:max-w-[45vw] max-[950px]:max-w-[50vw] max-[850px]:max-w-[57vw] max-[750px]:max-w-[66vw] max-[650px]:max-w-[77vw] max-[550px]:max-w-[88vw]";
+    const imgLandscape = "max-h-[65vh] mr-4 max-[800px]:mr-0 max-[800px]:max-h-[55vh]";
+    const imgPortrait = "max-w-[35vw] mb-2 max-[1200px]:max-w-[40vw] max-[1050px]:max-w-[45vw] max-[950px]:max-w-[50vw] max-[850px]:max-w-[57vw] max-[750px]:max-w-[66vw] max-[650px]:max-w-[77vw] max-[550px]:max-w-[88vw]";
 
     return ( 
         <motion.div 
@@ -45,12 +45,6 @@ const FullView = ({setItemView, itemView}) => {
             <motion.div 
             ref={fullViewRef}
             className={orientation == "portrait" ? containerPortrait : containerLandscape}>
-                <div className="absolute h-[40px] w-[40px] right-0 top-0">
-                    <div className="fullView_close" onClick={() => setItemView(null)}>
-                        <div className="bar bg-rose-100"></div>
-                        <div className="bar bg-rose-100"></div>
-                    </div>
-                </div>
                 <div className={orientation == "portrait" ? wrapPortrait : wrapLandscape}>
                     <img ref={imgRef} src={itemView.source} alt="" className={orientation == "portrait" ? imgPortrait : imgLandscape} />
                     <div className="flex-1 flex flex-col w-full overflow-y-hidden">

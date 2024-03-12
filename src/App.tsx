@@ -48,7 +48,7 @@ function App() {
   return (
     <>
     <ScreenWidthContext.Provider value={screenWidth}>
-      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} itemView={itemView} setItemView={setItemView} />
       <AnimatePresence>
         {menuOpen && <Menu />}
       </AnimatePresence>

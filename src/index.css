@@ -44,29 +44,3 @@ p, h1, h2, h3, img {
 .comments_box::-webkit-scrollbar {
   width: 10px;
 }
-
-.fullView_close {
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8%;
-}
-
-.fullView_close .bar {
-  margin: 0 auto;
-  width: 80%;
-  height: 15%;
-  border-radius: 1000px;
-}
-
-.fullView_close .bar:first-of-type {
-  transform: rotate(45deg) translate(20%, 20%);
-}
-
-.fullView_close .bar:last-of-type {
-  transform: rotate(-45deg) translate(16%, -10%);
-}

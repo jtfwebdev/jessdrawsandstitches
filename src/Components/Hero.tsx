@@ -85,11 +85,11 @@ const Hero = ({heroRef, portfolioRef}) => {
                 max-[850px]:m-auto max-[850px]:text-lg
                 max-[680px]:gap-5 max-[680px]:text-sm bg-transparent
                 ">
-                <p className="g-champagne-100">Embroidery</p>
+                <p>Embroidery</p>
                 <span>|</span>
-                <p className="g-champagne-100">Artwork</p>
+                <p>Artwork</p>
                 <span>|</span>
-                <p className="g-champagne-100">Greetings cards</p>
+                <p>Greetings cards</p>
             </div>
         </div>
      );
