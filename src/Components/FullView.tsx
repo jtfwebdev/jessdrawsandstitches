@@ -4,8 +4,8 @@ import AddMessage from "./AddMessage";
 
 const FullView = ({setItemView, itemView}) => {
 
-    const fullViewRef = useRef();
-    const imgRef = useRef();
+    const fullViewRef = useRef<HTMLInputElement>(null);
+    const imgRef = useRef<HTMLImageElement>(null);
     const [orientation, setOrientation] = useState("");
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const FullView = ({setItemView, itemView}) => {
     }, [])
 
     useEffect(() => {
-        if (imgRef.current) {
+        if (imgRef.current !== null) {
             if (imgRef.current.clientWidth > imgRef.current.clientHeight) setOrientation("portrait")
             else if (imgRef.current.clientWidth < imgRef.current.clientHeight) setOrientation("landscape")
             else setOrientation("square")
