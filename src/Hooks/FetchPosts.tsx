@@ -16,7 +16,7 @@ const FetchPosts = (setPosts, setFetching) => {
 
             //get comments
             let comments = [];
-            axios.get(`https://api.jessdrawsandstitches.co.uk/index.php/wp-json/wp/v2/comments?post=${item.id}`)
+            axios.get(import.meta.env.VITE_WP_POST_IND + item.id)
             .then((res) => {
                 res.data.forEach((x) => {
 

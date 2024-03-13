@@ -54,8 +54,8 @@ const FullView = ({setItemView, itemView}) => {
                                 {!itemView.comments[0] && 
                                 <p className="bg-champagne-100 w-fit px-2 mb-4 rounded text-[#C95D63]">No comments yet...</p>
                                 }
-                                {itemView.comments.map((comment) => {
-                                    return  <Comment comment={comment.comment} />
+                                {itemView.comments.map((comment, id) => {
+                                    return <Comment key={id} comment={comment.comment} />
                                 })}
                             </div>
                         </div>

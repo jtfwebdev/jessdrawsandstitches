@@ -13,7 +13,7 @@ const PostComment = (message, id, setMessage, setPlaceholderMessage) => {
         content: message
     }
 
-    axios.post(`https://api.jessdrawsandstitches.co.uk/wp-json/wp/v2/comments`, data)
+    axios.post(import.meta.env.VITE_WP_POST_COMMENT, data)
     .then((res) => {
         setMessage("");
         setPlaceholderMessage("Thank you!");

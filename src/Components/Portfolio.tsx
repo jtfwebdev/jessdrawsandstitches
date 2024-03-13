@@ -15,7 +15,7 @@ const Portfolio = ({posts, fetching, setItemView, portfolioRef}) => {
         ">
             { fetching && <SkeletonBox />}
             { posts && posts.map((img, idx) => {
-                return <div className="masonry_box relative" onClick={(e) => handleClick(e, img)}>
+                return <div key={idx} className="masonry_box relative" onClick={(e) => handleClick(e, img)}>
                     <img src={img.source} alt="" />
                 </div>
             })
