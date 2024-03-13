@@ -11,7 +11,7 @@ const Hero = ({heroRef, portfolioRef}) => {
     const handleScroll = () => {
         const hero = heroRef.current?.getBoundingClientRect();
         const portfolio = portfolioRef.current?.getBoundingClientRect();
-        if (portfolio.top - hero.bottom < -50) {
+        if (portfolio.top - hero.bottom < 20) {
             setHeroMinimised(true);
         } else setHeroMinimised(false);
     }
@@ -29,14 +29,15 @@ const Hero = ({heroRef, portfolioRef}) => {
         if (heroMinimised) {
             animateSvg(svgScope.current, {
                 scale: .6, 
-                y: screenWidth > 1200 ? -40 : screenWidth > 1050 ? -30 : screenWidth > 800 ? -25 : -20
+                y: screenWidth > 1200 ? -40 : screenWidth > 1050 ? -30 : screenWidth > 800 ? -25 : screenWidth > 425 ? -20 : -5
             }, {duration: .6});
             animateSubTitle(subTitleRef.current, {
-                y: screenWidth > 1050 ? -60 : screenWidth > 620 ? -40 : -30
+                y: screenWidth > 1050 ? -60 : screenWidth > 620 ? -40 : -30,
+                opacity: screenWidth < 425 ? 0 : 1
             }, {duration: .3});
         } else {
             animateSvg(svgScope.current, {scale: 1, y: 0}, {duration: .6});
-            animateSubTitle(subTitleRef.current, {y: 0}, {duration: .3});
+            animateSubTitle(subTitleRef.current, {y: 0, opacity: 1}, {duration: .3});
         }
 
     }, [heroMinimised])

@@ -29,8 +29,8 @@ const FullView = ({setItemView, itemView}) => {
         }
     }, [imgRef.current, itemView])
 
-    const containerLandscape = "fixed z-50 h-fit w-3/4 m-auto inset-x-0 inset-y-0 p-4 bg-white rounded max-[1000px]:w-[90%] max-[900px]:w-[95%] max-[800px]:w-fit max-[800px]:h-[95%]";
-    const containerPortrait = "fixed z-50 h-[90%] w-fit m-auto inset-x-0 inset-y-0 p-4 bg-white rounded";
+    const containerLandscape = "fixed z-50 h-fit w-3/4 m-auto inset-x-0 inset-y-0 p-4 bg-white rounded max-[1000px]:w-[90%] max-[900px]:w-[95%] max-[800px]:w-fit max-[800px]:h-[95%] max-[635px]:mt-0 max-[635px]:max-h-[90vh]";
+    const containerPortrait = "fixed z-50 h-[90%] w-fit m-auto inset-x-0 inset-y-0 p-4 bg-white rounded max-[635px]:mt-0 max-[635px]:max-h-[90vh]";
     const wrapLandscape = "h-full w-full flex max-[800px]:flex-col";
     const wrapPortrait = "h-full w-full flex flex-col";
     const imgLandscape = "max-h-[65vh] mr-4 max-[800px]:mr-0 max-[800px]:max-h-[55vh]";
@@ -38,7 +38,10 @@ const FullView = ({setItemView, itemView}) => {
 
     return ( 
         <motion.div 
-        className="fixed z-50 h-full w-full inset-x-0 inset-y-0 bg-transparent backdrop-blur" 
+        className="
+        fixed z-50 h-full w-full inset-x-0 inset-y-0 bg-transparent backdrop-blur
+        max-[635px]:mt-16
+        " 
         initial={{opacity: 0}}
         animate={{opacity: 1}}
         exit={{opacity: 0}}>
@@ -49,7 +52,7 @@ const FullView = ({setItemView, itemView}) => {
                     <img ref={imgRef} src={itemView.source} alt="" className={orientation == "portrait" ? imgPortrait : imgLandscape} />
                     <div className="flex-1 flex flex-col w-full overflow-y-hidden">
                         <div className="flex flex-1 flex-col overflow-y-hidden">
-                            <h3 className="text-[#C95D63] font-dancing text-4xl mb-4">Comments</h3>
+                            <h3 className="text-[#C95D63] font-dancing text-4xl max-[768px]:mt-4 mb-4">Comments</h3>
                             <div className="flex-1 flex flex-col overflow-y-scroll comments_box mb-2">
                                 {!itemView.comments[0] && 
                                 <p className="bg-champagne-100 w-fit px-2 mb-4 rounded text-[#C95D63]">No comments yet...</p>
