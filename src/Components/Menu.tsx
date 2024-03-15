@@ -50,7 +50,7 @@ const Menu = () => {
         }
     }
 
-    const fullScreenMenu = "h-screen z-40 w-[30%] pr-4 bg-white bg-opacity-[.95] backdrop-blur fixed overflow-hidden top-0 right-0 font-bold text-4xl font-[ubuntu] z-[60] shadow-2xl"
+    const fullScreenMenu = "h-screen z-40 w-[30%] pr-4 bg-white bg-opacity-[.95] backdrop-blur fixed overflow-hidden top-0 right-0 font-bold text-4xl font-[ubuntu] z-[60] shadow-2xl px-8"
     const mobileMenu = "h-screen z-40 w-full bg-white bg-opacity-[.95] backdrop-blur fixed top-0 font-bold text-4xl font-[ubuntu] z-[60] px-8"
 
     return ( 
