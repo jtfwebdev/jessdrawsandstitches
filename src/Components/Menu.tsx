@@ -61,28 +61,32 @@ const Menu = () => {
         animate="open"
         exit="exit"
         >
-            <motion.div variants={navLinkContainerVars} className="gap-8 pl-8 text-[#E88D67] flex h-full justify-center w-fit align-center flex-col">
-                <motion.h3 variants={navLinkVars} className="text-[#C95D63] font-dancing">
-                    Contact me
-                </motion.h3>
-                <div className="flex font-normal gap-8 ml-8 flex-col align-center font-dancing justify-around text-2xl text-[#C95D63]">
-                    <motion.a variants={navLinkVars} target="_blank" href="/">
-                        Email
-                    </motion.a>
-                    <motion.a variants={navLinkVars} target="_blank" href="/">
-                        Instagram
-                    </motion.a>
+            <motion.div variants={navLinkContainerVars} className="gap-8 pl-8 py-[20vh] text-[#E88D67] flex h-full justify-between w-fit align-center flex-col">
+                <div>
+                    <motion.h3 variants={navLinkVars} className="text-[#C95D63] font-dancing mb-8">
+                        Contact me
+                    </motion.h3>
+                    <div className="flex font-normal gap-8 ml-8 flex-col align-center font-dancing justify-around text-2xl text-[#C95D63]">
+                        <motion.a variants={navLinkVars} target="_blank" href="mailto:jessicacox96@hotmail.co.uk?Subject=Portfolio%20Query">
+                            Email
+                        </motion.a>
+                        <motion.a variants={navLinkVars} target="_blank" href="https://www.instagram.com/jessdrawsandstitches?igsh=MXhpemVtY2ZrdWRkYQ==">
+                            Instagram
+                        </motion.a>
+                    </div>
                 </div>
-                <motion.p variants={navLinkVars} className="text-lg mt-[30vh] font-[poppins] text-champagne-100 text-wrap">
-                    Website designed and developed by Josh Ford
-                </motion.p>
-                <div className="flex font-normal gap-8 ml-8 flex-col align-center font-[poppins] justify-around text-2xl text-champagne-100">
-                    <motion.a className="text-base" variants={navLinkVars} target="_blank" href="mailto:jtfwebdevconsultant@hotmail.com?Subject=Website%20Development%20Query">
-                        jtfwebdevconsultant@hotmail.com
-                    </motion.a>
-                    <motion.a className="text-base" variants={navLinkVars} target="_blank" href="https://www.jtfwebdev.co.uk">
-                        jtfwebdev.co.uk
-                    </motion.a>
+                <div>
+                    <motion.p variants={navLinkVars} className="text-lg font-[poppins] text-champagne-100 mb-8 text-wrap">
+                        Website designed and developed by Josh Ford
+                    </motion.p>
+                    <div className="flex font-normal gap-8 ml-8 flex-col align-center font-[poppins] justify-around text-2xl text-champagne-100">
+                        <motion.a className="text-base" variants={navLinkVars} target="_blank" href="mailto:jtfwebdevconsultant@hotmail.com?Subject=Website%20Development%20Query">
+                            jtfwebdevconsultant@hotmail.com
+                        </motion.a>
+                        <motion.a className="text-base" variants={navLinkVars} target="_blank" href="https://www.jtfwebdev.co.uk">
+                            jtfwebdev.co.uk
+                        </motion.a>
+                    </div>
                 </div>
             </motion.div>
         </motion.div>

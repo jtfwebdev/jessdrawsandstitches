@@ -1,19 +1,31 @@
 .masonry_container {
-    columns: 4;
-    column-gap: 20px;
-    column-rule: solid 1px #4d243d2c;
+    -moz-columns: 4;
+         columns: 4;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+    -moz-column-rule: solid 1px #4d243d2c;
+         column-rule: solid 1px #4d243d2c;
 }
 
 @media(max-width: 750px) {
     .masonry_container {
-        columns: 3
+        -moz-columns: 3;
+             columns: 3
+    }
+}
+
+@media(max-width: 550px) {
+    .masonry_container {
+        -moz-columns: 2;
+        columns: 2;
     }
 }
 
 .masonry_box {
     width: 100%;
     margin-bottom: 10px;
-    break-inside: avoid;
+    -moz-column-break-inside: avoid;
+         break-inside: avoid;
 }
 
 .masonry_box img {
@@ -23,10 +35,12 @@
 }
 
 .masonry_container:hover .masonry_box img {
-    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
 }
 
 .masonry_container .masonry_box:hover img {
-    filter: none;
+    -webkit-filter: none;
+            filter: none;
     transform: scale(1.05);
 }

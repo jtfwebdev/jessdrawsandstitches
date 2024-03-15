@@ -14,6 +14,9 @@ const FetchPosts = (setPosts, setFetching) => {
             //get likes
             let likes = item.likes;
 
+            //get orientation
+            let orientation = item.orientation;
+
             //get comments
             let comments = [];
             axios.get(import.meta.env.VITE_WP_POST_IND + item.id)
@@ -32,7 +35,8 @@ const FetchPosts = (setPosts, setFetching) => {
                 id: item.id,
                 source: trunc,
                 comments: comments,
-                likes: likes
+                likes: likes,
+                orientation: orientation
             }]
         })
         setPosts(imgs);

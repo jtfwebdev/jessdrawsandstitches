@@ -21,7 +21,10 @@ body {
 
 p, h1, h2, h3, img {
   pointer-events: none;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 ::-webkit-scrollbar {
