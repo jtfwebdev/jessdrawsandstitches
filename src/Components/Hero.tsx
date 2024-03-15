@@ -2,25 +2,9 @@ import { motion, useAnimate } from 'framer-motion';
 import { useEffect, useRef, useState, useContext } from 'react';
 import { ScreenWidthContext } from '../App';
 
-const Hero = ({heroRef, portfolioRef}) => {
+const Hero = ({heroRef, heroMinimised}) => {
 
-    const screenWidth = useContext(ScreenWidthContext);
-
-    const [heroMinimised, setHeroMinimised] = useState(false);                   
-
-    const handleScroll = () => {
-        const hero = heroRef.current?.getBoundingClientRect();
-        const portfolio = portfolioRef.current?.getBoundingClientRect();
-        if (portfolio.top - hero.bottom < 20) {
-            setHeroMinimised(true);
-        } else setHeroMinimised(false);
-    }
-
-    useEffect(() => {
-
-        window.addEventListener("scroll", handleScroll)
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    const screenWidth = useContext(ScreenWidthContext);                  
 
     const [svgScope, animateSvg] = useAnimate();
     const [subTitleRef, animateSubTitle] = useAnimate();

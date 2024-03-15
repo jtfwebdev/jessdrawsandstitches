@@ -1,8 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import { motion } from 'framer-motion';
 import AddMessage from "./AddMessage";
+import { ScreenWidthContext } from "../App";
 
-const FullView = ({setItemView, itemView}) => {
+const FullView = ({setItemView, itemView, handleScroll}) => {
+
+    const screenWidth = useContext(ScreenWidthContext);
 
     const fullViewRef = useRef<HTMLInputElement>(null);
     const imgRef = useRef<HTMLImageElement>(null);
@@ -14,6 +17,7 @@ const FullView = ({setItemView, itemView}) => {
             
             if (fullViewRef.current && !fullViewRef.current.contains(event.target)) {
                 setItemView(null);
+                if (screenWidth <= 635) handleScroll();
             }
         }
 

@@ -34,13 +34,16 @@
     transition-duration: .3s;
 }
 
-.masonry_container:hover .masonry_box img {
-    -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
+@media(min-width: 800px) {
+    .masonry_container:hover .masonry_box img {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+
+    .masonry_container .masonry_box:hover img {
+        -webkit-filter: none;
+        filter: none;
+        transform: scale(1.05);
+    }
 }
 
-.masonry_container .masonry_box:hover img {
-    -webkit-filter: none;
-            filter: none;
-    transform: scale(1.05);
-}

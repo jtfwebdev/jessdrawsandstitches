@@ -1,10 +1,15 @@
 import '../assets/Styles/Portfolio.css';
+import { useContext } from 'react';
+import { ScreenWidthContext } from '../App';
 
-const Portfolio = ({posts, fetching, setItemView, portfolioRef}) => {
+const Portfolio = ({posts, fetching, setItemView, portfolioRef, setHeroMinimised}) => {
+
+    const screenWidth = useContext(ScreenWidthContext);
 
     const handleClick = (e, img) => {
         e.stopPropagation();
         setItemView(img);
+        if (screenWidth <= 635) setHeroMinimised(true)
     }
 
     return ( 

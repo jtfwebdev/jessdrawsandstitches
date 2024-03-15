@@ -24,11 +24,12 @@ function App() {
     return () => window.removeEventListener("resize", watchWidth);
   }, [])
 
-  const heroRef = useRef();
-  const portfolioRef = useRef();
+  const heroRef = useRef<HTMLDivElement>(null);
+  const portfolioRef = useRef<HTMLDivElement>(null);
   const [itemView, setItemView] = useState(null);
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [heroMinimised, setHeroMinimised] = useState(false); 
 
   const [posts, setPosts] = useState(null);
   const [fetching, setFetching] = useState(true);
@@ -45,6 +46,20 @@ function App() {
     }
   }, [itemView])
 
+  const handleScroll = () => {
+        const hero = heroRef.current?.getBoundingClientRect();
+        const portfolio = portfolioRef.current?.getBoundingClientRect();
+        if (portfolio.top - hero.bottom < 20) {
+            setHeroMinimised(true);
+        } else setHeroMinimised(false);
+    }
+
+    useEffect(() => {
+
+        window.addEventListener("scroll", handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
   return (
     <>
     <ScreenWidthContext.Provider value={screenWidth}>
@@ -53,7 +68,7 @@ function App() {
         {menuOpen && <Menu />}
       </AnimatePresence>
       <AnimatePresence>
-        {itemView && <FullView itemView={itemView} setItemView={setItemView} />}
+        {itemView && <FullView itemView={itemView} setItemView={setItemView} handleScroll={handleScroll} />}
       </AnimatePresence>
       <div 
       className="
@@ -61,8 +76,8 @@ function App() {
         max-[700px]:px-[6%]
         max-[550px]:px-[1%]
         ">
-        <Hero heroRef={heroRef} portfolioRef={portfolioRef} />
-        <Portfolio posts={posts} fetching={fetching} setItemView={setItemView} portfolioRef={portfolioRef} />
+        <Hero heroRef={heroRef} heroMinimised={heroMinimised} />
+        <Portfolio posts={posts} fetching={fetching} setItemView={setItemView} portfolioRef={portfolioRef} setHeroMinimised={setHeroMinimised} />
       </div>
     </ScreenWidthContext.Provider>
     </>
